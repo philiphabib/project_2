@@ -88,3 +88,4 @@ Launch the frontend app locally.
 # project2
 # test1
 # project_2
+# solution_k8s_updated
