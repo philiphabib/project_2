@@ -1,0 +1,117 @@
+Name:              backend-feed
+Namespace:         default
+Labels:            service=backend-feed
+Annotations:       <none>
+Selector:          service=backend-feed
+Type:              ClusterIP
+IP Families:       <none>
+IP:                10.100.241.228
+IPs:               10.100.241.228
+Port:              8080  8080/TCP
+TargetPort:        8080/TCP
+Endpoints:         192.168.88.78:8080
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              backend-user
+Namespace:         default
+Labels:            service=backend-user
+Annotations:       <none>
+Selector:          service=backend-user
+Type:              ClusterIP
+IP Families:       <none>
+IP:                10.100.136.110
+IPs:               10.100.136.110
+Port:              8080  8080/TCP
+TargetPort:        8080/TCP
+Endpoints:         192.168.87.140:8080
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              frontend
+Namespace:         default
+Labels:            service=frontend
+Annotations:       <none>
+Selector:          service=frontend
+Type:              ClusterIP
+IP Families:       <none>
+IP:                10.100.75.64
+IPs:               10.100.75.64
+Port:              8100  8100/TCP
+TargetPort:        80/TCP
+Endpoints:         192.168.75.254:80,192.168.92.148:80
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              kubernetes
+Namespace:         default
+Labels:            component=apiserver
+                   provider=kubernetes
+Annotations:       <none>
+Selector:          <none>
+Type:              ClusterIP
+IP Families:       <none>
+IP:                10.100.0.1
+IPs:               10.100.0.1
+Port:              https  443/TCP
+TargetPort:        443/TCP
+Endpoints:         192.168.114.244:443,192.168.167.28:443
+Session Affinity:  None
+Events:            <none>
+
+
+Name:                     publicfrontend
+Namespace:                default
+Labels:                   service=frontend
+Annotations:              <none>
+Selector:                 service=frontend
+Type:                     LoadBalancer
+IP Families:              <none>
+IP:                       10.100.188.44
+IPs:                      10.100.188.44
+LoadBalancer Ingress:     a7c48e54f83b9410ab4128a0c706b822-1028603296.eu-west-2.elb.amazonaws.com
+Port:                     <unset>  80/TCP
+TargetPort:               80/TCP
+NodePort:                 <unset>  30449/TCP
+Endpoints:                192.168.75.254:80,192.168.92.148:80
+Session Affinity:         None
+External Traffic Policy:  Cluster
+Events:                   <none>
+
+
+Name:                     publicreverseproxy
+Namespace:                default
+Labels:                   service=reverseproxy
+Annotations:              <none>
+Selector:                 service=reverseproxy
+Type:                     LoadBalancer
+IP Families:              <none>
+IP:                       10.100.146.1
+IPs:                      10.100.146.1
+LoadBalancer Ingress:     ab86ff65935054fc090aedf04d09e7cd-482082866.eu-west-2.elb.amazonaws.com
+Port:                     <unset>  8080/TCP
+TargetPort:               8080/TCP
+NodePort:                 <unset>  31855/TCP
+Endpoints:                192.168.12.65:8080,192.168.65.106:8080
+Session Affinity:         None
+External Traffic Policy:  Cluster
+Events:                   <none>
+
+
+Name:              reverseproxy-svc
+Namespace:         default
+Labels:            service=reverseproxy
+Annotations:       <none>
+Selector:          service=reverseproxy
+Type:              ClusterIP
+IP Families:       <none>
+IP:                10.100.230.150
+IPs:               10.100.230.150
+Port:              8080  8080/TCP
+TargetPort:        8080/TCP
+Endpoints:         192.168.12.65:8080,192.168.65.106:8080
+Session Affinity:  None
+Events:            <none>
