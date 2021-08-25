@@ -6,11 +6,11 @@ import {IndexRouter} from './controllers/v0/index.router';
 
 import bodyParser from 'body-parser';
 import {config} from './config/config';
-import {V0_FEED_MODELS} from './controllers/v0/model.index';
+import {V0MODELS} from './controllers/v0/model.index';
 
 
 (async () => {
-  await sequelize.addModels(V0_FEED_MODELS);
+  await sequelize.addModels(V0MODELS);
   
 
   console.debug("Initialize database connection...");
@@ -35,7 +35,7 @@ import {V0_FEED_MODELS} from './controllers/v0/model.index';
     origin: '*',
   }));
   
-  app.use("/api/v0/", IndexRouter)
+  app.use('/api/v0/', IndexRouter)
   
   // Root URI call
 
