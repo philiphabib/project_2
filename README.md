@@ -89,3 +89,4 @@ Launch the frontend app locally.
 # test1
 # project_2
 # solution_k8s_updated
+# solution_k8s_updated
